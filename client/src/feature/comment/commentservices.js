@@ -1,5 +1,5 @@
 import axios from "axios";
-
+const   BaseUrl='https://workspace-p7ko.onrender.com'
 const createcomment= async(token,formData)=>{
     console.log(formData)
   const options = {
@@ -11,7 +11,7 @@ const createcomment= async(token,formData)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.post(
-    `/api/project/task/${formData.id}/comment`,formData,
+    `${BaseUrl}/api/project/task/${formData.id}/comment`,formData,
     options
   );
 
@@ -33,7 +33,7 @@ const getallcomment= async(token)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.get(
-    `/api/project/comment/taks`,
+    `${BaseUrl}/api/project/comment/taks`,
     options
   );
 
@@ -59,7 +59,7 @@ const getadmincomment= async(token,id)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.get(
-    `/api/project/task/${id}`,
+    `${BaseUrl}/api/project/task/${id}`,
     options
   );
 

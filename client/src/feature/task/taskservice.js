@@ -1,4 +1,5 @@
 import axios from "axios"
+const   BaseUrl='https://workspace-p7ko.onrender.com'
 
 
 const createtask= async(token,formData)=>{
@@ -12,7 +13,7 @@ console.log(formData)
   };
 
   // ✅ Send plain object, not nested under `formData`
-  const response = await axios.post(`/api/projects/${formData.projectId}/tasks?assignedTo=${formData.assignedTo}`,data,
+  const response = await axios.post(`${BaseUrl}/api/projects/${formData.projectId}/tasks?assignedTo=${formData.assignedTo}`,data,
     options
   );
 console.log(response.data)
@@ -35,7 +36,7 @@ const getsingletask= async(token,id)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.get(
-    `/api/project/tasks/${id}`,
+    `${BaseUrl}/api/project/tasks/${id}`,
     options
   );
 
@@ -54,7 +55,7 @@ const getalltask= async(token)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.get(
-    `/api/task/alltask`,
+    `${BaseUrl}/api/task/alltask`,
     options
   );
 console.log(response.data)
@@ -79,7 +80,7 @@ const data=formData.formData
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.put(
-    `/api/projects/task/${formData._id}`,data,
+    `${BaseUrl}/api/projects/task/${formData._id}`,data,
     options
   );
 // console.log(response.data)
@@ -99,7 +100,7 @@ console.log(id)
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.delete(
-    `/api/projects/task/${id}`,
+    `${BaseUrl}/api/projects/task/${id}`,
     options
   );
 console.log(response.data)

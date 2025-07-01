@@ -1,4 +1,5 @@
 import axios from "axios"
+const   BaseUrl='https://workspace-p7ko.onrender.com'
 
 const createprojects= async(token,formData)=>{
 
@@ -14,7 +15,7 @@ const createprojects= async(token,formData)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.post(
-    `/api/project/${formData.id}`,
+    `${BaseUrl}/api/project/${formData.id}`,
 data,
     options
   );
@@ -36,7 +37,7 @@ const getproject= async(token)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.get(
-    `/api/project`,
+    `${BaseUrl}/api/project`,
     options
   );
 
@@ -60,7 +61,7 @@ const getsingleiproject= async(token,id)=>{
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.get(
-    `/api/projects/${id}`,
+    `${BaseUrl}/api/projects/${id}`,
     options
   );
 
@@ -86,7 +87,7 @@ console.log(formData)
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.post(
-    `/api/send-invite`,{email:formData},
+    `${BaseUrl}/api/send-invite`,{email:formData},
     options
   );
 

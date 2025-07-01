@@ -55,7 +55,7 @@ const createemail=expressAsyncHandler( async (req, res) => {
       from: `"My App" <${process.env.MAIL_USER}>`,
       to: email,
       subject: "You're invited!",
-      html: "<b>Join our awesome app by clicking this http://localhost:5173/dashboard</b>"
+      html: "<b>Join our awesome app by clicking this https://workspace-p7ko.onrender.com </b>"
     });
 
     res.json({ message: "Invite sent!" });
@@ -76,19 +76,19 @@ app.use('/api',require('./routes/commentroute'))
 app.use('/api',require('./routes/memberroutes'))
  app.post('/api/send-invite',protect,createemail)
 
-// if(process.env.NODE_ENV==="production"){
+if(process.env.NODE_ENV==="production"){
   
-// const  __dirname = path.resolve();
-// app.use(express.static(path.join(__dirname,"/client/dist")))
+const  __dirname = path.resolve();
+app.use(express.static(path.join(__dirname,"/client/dist")))
 
-// app.get("*",(req,res)=>res.sendFile(path.resolve(__dirname,"client","dist","index.html")))
+app.get("*",(req,res)=>res.sendFile(path.resolve(__dirname,"client","dist","index.html")))
 
-// }else{
-//   const __dirname=path.resolve();
-//   app.get("/",(req,res)=>{
-//     res.send('team collaboration app')
-//   })
-// }
+}else{
+  const __dirname=path.resolve();
+  app.get("/",(req,res)=>{
+    res.send('team collaboration app')
+  })
+}
 
 app.use(errorHandler);
 

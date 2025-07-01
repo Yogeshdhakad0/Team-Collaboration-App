@@ -1,4 +1,5 @@
 import axios from "axios";
+const   BaseUrl='https://workspace-p7ko.onrender.com'
 
 const userall=async(token)=>{
    
@@ -8,7 +9,7 @@ const userall=async(token)=>{
                 authorization : `Bearer ${token}`,
             }
         }
-        const response = await axios.get('/api/alluser',options);
+        const response = await axios.get(`${BaseUrl}/api/alluser`,options);
   
          return response.data
 }
@@ -26,7 +27,7 @@ const createworkspace = async (token, formdata) => {
 
   // ✅ Send plain object, not nested under `formData`
   const response = await axios.post(
-    `/api/workspaces/${formdata.id}`,
+    `${BaseUrl}/api/workspaces/${formdata.id}`,
     name,
     options
   );
@@ -49,7 +50,7 @@ const getworkspace=async(token)=>{
                 authorization : `Bearer ${token}`,
             }
         }
-        const response = await axios.get('/api/workspaces',options);
+        const response = await axios.get(`${BaseUrl}/api/workspaces`,options);
  
          return response.data
 }

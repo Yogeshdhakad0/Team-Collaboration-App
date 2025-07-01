@@ -21,7 +21,7 @@ import AuthComponent from './components/AuthComponent';
 import Member from './pages/Member';
 import PagenotFound from './pages/PagenotFound';
 import Privatecomponent from './components/Privatecomponent';
-import Privatemember from './components/privatemember';
+import Privatemember from './components/Privatemember';
 // import AllMember from './pages/Allmember';
 
 
