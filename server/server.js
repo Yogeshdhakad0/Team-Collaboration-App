@@ -3,7 +3,7 @@ const DBconntion = require('./config/DB-contect');
 const nodemailer = require("nodemailer")
 const cors = require('cors');
 const expressAsyncHandler = require('express-async-handler');
-const { protect } = require('./Middlewares/Middlewaretoken');
+const { protect } = require('./Middlewares/middlewaretoken');
 require('dotenv').config()
 
 // const { path } = require('path');

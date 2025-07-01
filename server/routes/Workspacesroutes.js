@@ -1,6 +1,6 @@
 const express = require('express');
 const { memberadd,getmember ,createWorkspace,getWorkspaces, alluser} = require('../controllers/workspacescontroll');
-const { protect } = require('../Middlewares/Middlewaretoken');
+const { protect } = require('../Middlewares/middlewaretoken');
 
 
  const router= express.Router()
