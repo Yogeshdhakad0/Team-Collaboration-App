@@ -9,7 +9,7 @@ export default defineConfig({
     server:{
     proxy:{
       '/api':{
-        target:'http://localhost:5173/',
+        target:'https://workspace-p7ko.onrender.com',
         changeOrigin:true,
         secure:false
       }
