@@ -7,7 +7,7 @@ const commentmember = require("../models/membercommentmodel");
 const createcomment = expressAsyncHandler(async (req, res) => {
   const { commenttext } = req.body;
 
-  const { id } = req.params;
+  const { idcommmed } = req.params;
   console.log(id)
 
   if (!commenttext) {
@@ -18,7 +18,7 @@ const createcomment = expressAsyncHandler(async (req, res) => {
   const newcomment = await comment.create({
     commenttext,
     userId: req.user._id, // token se aayi user ki ID
-    taskId:id             // URL param se task ID
+    taskId:idcommmed             // URL param se task ID
   });
 
   res.status(201).json(newcomment);
