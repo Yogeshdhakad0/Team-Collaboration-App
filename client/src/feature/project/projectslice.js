@@ -26,7 +26,7 @@ const projectslice=createSlice({
         state.isLoading=false
         state.isError=false
         state.isSuccess=true
-        state.projects = [...state.projects,action.payload]
+        state.singleiprojects = [...state.singleiprojects,action.payload]
         // state.projects = action.payload;
 })  
 .addCase(CreateProject.rejected,(state,action)=>{

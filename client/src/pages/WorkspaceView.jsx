@@ -219,7 +219,7 @@ const WorkspaceView = () => {
     dispatch(CreateProject({ formData, id }));
     setShowForm(false);
     setFormData({ projectname: '', description: '' });
-    window.location.reload()
+    // window.location.reload()
   };
 
   useEffect(() => {
