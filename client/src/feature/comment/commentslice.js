@@ -11,6 +11,7 @@ const commentslice=createSlice({
         isLoading:false,
         isError:false,
         isSuccess:false,
+        isSSuccess:false,
          Message:''
 
     },
@@ -25,9 +26,9 @@ const commentslice=createSlice({
     console.log(action.payload,'sdfsfsdf')
         state.isLoading=false
         state.isError=false
-        state.isSuccess=true
+        state.isSSuccess=true
         state.comments = [...state.comments,action.payload]
-        // state.projects = action.payload;
+      
 })  
 .addCase(CreateComment.rejected,(state,action)=>{
     state.isLoading=false

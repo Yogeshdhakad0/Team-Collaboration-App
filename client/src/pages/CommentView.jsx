@@ -18,6 +18,8 @@ const CommentView = () => {
 
   // Redux state selectors
   const { comments: allComments = {} } = useSelector((state) => state.comment);
+
+  const { isSSuccess = {} } = useSelector((state) => state.comment);
   const { tasks: allTasks = [] } = useSelector((state) => state.task);
 
   // Find the specific task based on the ID
@@ -48,8 +50,16 @@ const CommentView = () => {
     dispatch(CreateComment({ commenttext: newCommentText, id })); // Dispatch create action
     setNewCommentText(""); // Clear input
     setShowCommentForm(false); // Hide form
-    window.location.reload();
+   
+ 
+
   };
+
+//    if(isSSuccess){
+//  window.location.reload("your comment  add");
+
+// }
+
 
   // Handler for Back to Dashboard button
   const handleBackToDashboard = () => {

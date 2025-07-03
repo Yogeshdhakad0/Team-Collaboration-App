@@ -144,7 +144,7 @@ const ProjectAll = () => {
               It looks like you haven't created any projects. Start by creating your first project to organize tasks and collaborate with your team.
             </p>
             <Link
-              to="/dashboard"
+              to="/admin/dashboard"
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-base font-medium shadow-md"
             >
               <Plus className="w-5 h-5 mr-2" />
@@ -217,7 +217,7 @@ const ProjectAll = () => {
 
               {/* View Project Button */}
               <Link
-                to={`/project/${project._id}`}
+                to={`/admin/project/${project._id}`}
                 className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors text-sm shadow-md"
               >
                 View Project <ChevronRight className="w-4 h-4 ml-2" />
